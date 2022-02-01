@@ -1,5 +1,6 @@
 const btn = document.querySelector(".btn");
 const container = document.querySelector(".container");
+const text = document.querySelector(".text");
 //Method One
 // btn.addEventListener("click", function () {
 //   console.log("Clicked");
@@ -21,8 +22,9 @@ const colors = [
 ];
 btn.addEventListener("click", function () {
   console.log("Clicked");
-  let color1 = Math.ceil(Math.random() * colors.length);
-  let color2 = Math.ceil(Math.random() * colors.length);
+  let color1 = Math.ceil(Math.random() * colors.length - 1);
+  let color2 = Math.ceil(Math.random() * colors.length - 1);
   console.log(color1, color2);
+  text.innerHTML = `background-color: ${colors[color1]},${colors[color2]}`;
   container.style.backgroundImage = `linear-gradient(to bottom left, ${colors[color1]}, ${colors[color2]})`;
 });
